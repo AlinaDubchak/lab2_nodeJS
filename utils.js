@@ -21,7 +21,6 @@ export function parseForm(data, failback) {
         let key = keyLine.substring(keyStart, keyEnd)
         let value = data[i + 1]
         result[key] = value
-        console.log(result)
       }
     }
 

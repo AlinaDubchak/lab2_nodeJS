@@ -7,7 +7,6 @@ import { json } from './helpers.js'
 const processedContentTypes = {
   'text/html': (text) => text,
   'application/json': (json) => jsonPr(json, {}),
-  // 'application/xml': (xml) => xmlParse(xml),
   'multipart/form-data': (data) => parseForm(data),
   'application/x-www-form-urlencoded': (data) => {
     return Object.fromEntries(new URLSearchParams(data))
