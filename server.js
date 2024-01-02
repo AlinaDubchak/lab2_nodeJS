@@ -1,6 +1,6 @@
 import http from 'http'
 import { URL } from 'url'
-import { jsonPr } from './utils.js'
+import { jsonPr, parseForm } from './utils.js'
 import { router } from './router.js'
 import { json } from './helpers.js'
 
@@ -8,7 +8,7 @@ const processedContentTypes = {
   'text/html': (text) => text,
   'application/json': (json) => jsonPr(json, {}),
   // 'application/xml': (xml) => xmlParse(xml),
-  // 'multipart/form-data': (data) => parseForm(data),
+  'multipart/form-data': (data) => parseForm(data),
   'application/x-www-form-urlencoded': (data) => {
     return Object.fromEntries(new URLSearchParams(data))
   }
